@@ -2330,10 +2330,20 @@
   "resolved" "https://registry.npmjs.org/escape-html/-/escape-html-1.0.3.tgz"
   "version" "1.0.3"
 
-"escape-string-regexp@^1.0.2", "escape-string-regexp@^1.0.5", "escape-string-regexp@1.0.5":
+"escape-string-regexp@^1.0.2":
   "integrity" "sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ="
   "resolved" "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz"
   "version" "1.0.5"
+
+"escape-string-regexp@^1.0.5", "escape-string-regexp@1.0.5":
+  "integrity" "sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ="
+  "resolved" "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz"
+  "version" "1.0.5"
+
+"escape-string-regexp@^5.0.0":
+  "integrity" "sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw=="
+  "resolved" "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-5.0.0.tgz"
+  "version" "5.0.0"
 
 "escodegen@^1.6.1":
   "integrity" "sha1-WltTr0aTEQvrsIZ6o0MN07cKEBg="
@@ -4654,6 +4664,11 @@
   "resolved" "https://registry.npmjs.org/object-keys/-/object-keys-1.0.11.tgz"
   "version" "1.0.11"
 
+"object-path@0.6.0":
+  "integrity" "sha1-tpp9EQk3k08zbKVh/ZvhrXt+DLc="
+  "resolved" "https://registry.npmjs.org/object-path/-/object-path-0.6.0.tgz"
+  "version" "0.6.0"
+
 "object.omit@^2.0.0":
   "integrity" "sha1-Gpx0SCnznbuFjHbKNXmuKlTr0fo="
   "resolved" "https://registry.npmjs.org/object.omit/-/object.omit-2.0.1.tgz"
@@ -5447,7 +5462,7 @@
   dependencies:
     "asap" "~2.0.3"
 
-"prop-types@^15.5.10":
+"prop-types@^15.5.10", "prop-types@^15.7.2":
   "integrity" "sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ=="
   "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.7.2.tgz"
   "version" "15.7.2"
@@ -6226,6 +6241,13 @@
   dependencies:
     "faye-websocket" "^0.10.0"
     "uuid" "^2.0.2"
+
+"sort-by@^1.2.0":
+  "integrity" "sha1-7ZK7/5/SKEtB9lA+OElmB7Il/m8="
+  "resolved" "https://registry.npmjs.org/sort-by/-/sort-by-1.2.0.tgz"
+  "version" "1.2.0"
+  dependencies:
+    "object-path" "0.6.0"
 
 "sort-keys@^1.0.0":
   "integrity" "sha1-RBttTTRnmPG05J6JIK37oOVD+a0="
