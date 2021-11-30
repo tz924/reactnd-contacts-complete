@@ -1,29 +1,19 @@
 import React, { Component } from 'react';
 import ListContacts from './ListContacts'
-
+import * as ContactsAPI from './utils/ContactsAPI'
+import CreateContact from './CreateContact';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 class App extends Component {
   state = {
-    contacts: [
-      {
-        "id": "karen",
-        "name": "Karen Isgrigg",
-        "handle": "karen_isgrigg",
-        "avatarURL": "http://localhost:5001/karen.jpg"
-      },
-      {
-        "id": "richard",
-        "name": "Richard Kalehoff",
-        "handle": "richardkalehoff",
-        "avatarURL": "http://localhost:5001/richard.jpg"
-      },
-      {
-        "id": "tyler",
-        "name": "Tyler McGinnis",
-        "handle": "tylermcginnis",
-        "avatarURL": "http://localhost:5001/tyler.jpg"
-      }
-    ],
+    contacts: [],
+  }
+
+  componentDidMount() {
+    ContactsAPI.getAll()
+      .then(contacts => {
+        this.setState(() => ({ contacts }))
+      })
   }
 
   removeContact = (contact) => {
@@ -37,14 +27,36 @@ class App extends Component {
     ))
   }
 
+  createContact = (contact) => {
+    ContactsAPI.create(contact)
+      .then((contact) => {
+        this.setState((currentState) => ({
+          contacts: currentState.contacts.concat([contact])
+        }))
+      })
+  }
+
   render() {
     return (
-      <div>
-        <ListContacts
-          contacts={this.state.contacts}
-          onDeleteContact={this.removeContact}
+      <Routes>
+        <Route
+          path="/"
+          element={<ListContacts
+            contacts={this.state.contacts}
+            onDeleteContact={this.removeContact}
+          />}
         />
-      </div>
+        <Route
+          path="/create"
+          element={<CreateContact
+            onCreateContact={(contact) => {
+              this.createContact(contact);
+              // let navigate = useNavigate()
+              // navigate("/");
+            }}
+          />}
+        />
+      </Routes >
     )
   }
 }
